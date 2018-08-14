@@ -19,8 +19,19 @@
 	</head>
 	<body>
 		
-		<div>
-			
+		<div id="todo">
+			<section>
+				<input v-model="newTask" v-on:keyup.enter="addTask" type="text" 
+				placeholder="What do you need to do?">
+			</section>
+			<!-- <p>{{ newTask }}</p> -->
+			<!-- as I type into the text input, the paragraph element shows exactly what I'm typing on the document -->
+			<ul>
+				<li v-for="task in todoList">  {{task}}
+					<label></label>
+					<button type="button" v:onclick="removeTask(task)">X</button>
+				</li>
+			</ul>	
 		</div>
 
 	
